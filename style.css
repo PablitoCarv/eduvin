@@ -66,7 +66,7 @@
   }
   section {
     width: 100%;
-   height: 60em;
+   min-height: 10em;
   }
 
   hr {
@@ -89,12 +89,12 @@
   #roupas {
     background-color: white;
     color: rgb(24, 23, 23);
-    height: 30em;
+    
   }
   #acessorios {
     background-color: white;
     color: rgb(24, 23, 23);
-    height: 30em;
+    
   }
   #sobrenos {
     background-color: white;
@@ -147,7 +147,7 @@
     box-shadow: 0.4px 8px 0 rgba(0,0,0,0,2);
     transition: 0.3s;
     border-radius: 5px;
-    width: 30%;
+    max-width: 30%;
     min-width: 240px;
     display: inline-block;
 
@@ -187,7 +187,7 @@
     box-shadow: 0.4px 8px 0 rgba(0,0,0,0,2);
     transition: 0.3s;
     border-radius: 5px;
-    width: 30%;
+    
     min-width: 240px;
     display: inline-block;
   }
@@ -216,7 +216,6 @@
     box-shadow: 0.4px 8px 0 rgba(0,0,0,0,2);
     transition: 0.3s;
     border-radius: 5px;
-    width: 30%;
     min-width: 240px;
     display: inline-block;
   }
@@ -249,7 +248,7 @@
     box-shadow: 0.4px 8px 0 rgba(0,0,0,0,2);
     transition: 0.3s;
     border-radius: 5px;
-    width: 30%;
+    max-width: 30%;
     min-width: 240px;
     display: inline-block;
     align-items: center;
@@ -274,9 +273,9 @@
     box-shadow: 0.4px 8px 0 rgba(0,0,0,0,2);
     transition: 0.3s;
     border-radius: 5px;
-    width: 30%;
     min-width: 240px;
-    display: inline-block;
+    max-width: 30%;
+    
     align-items: center;
     justify-content: center;
   }
@@ -328,13 +327,14 @@
 }
 
 .login-container {
+  
   background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
   width: 300px;
   height: 60vh;
-  margin: 0 auto;
+  margin: 2em auto;
   text-align: center;
 }
 
@@ -357,9 +357,9 @@
 
 .input-group input[type="text"],
 .input-group input[type="password"] {
-  width: 100%;
-  
-  border: 1px solid #cccccc;
+  width: 90%;
+  padding: .5em;
+  border: 2px solid rgb(77, 76, 76);
   border-radius: 5px;
 }
 

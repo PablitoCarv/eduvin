@@ -1,4 +1,4 @@
-<?php include('ligacao.php');?>
+
 <?php
  
 include('ligacao.php');

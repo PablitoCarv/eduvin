@@ -28,7 +28,7 @@
         </form>
         <div class="footer-links">
             <a href="registo.php">Não tem uma conta?</a>
-            <?php include_once('registo.php');?>
+            
             <a href="#">Esqueceu a senha?</a>
         </div>
     </div>

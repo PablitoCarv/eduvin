@@ -28,64 +28,51 @@
         <section id="roupas">
             <hr>
             <h1>Roupas</h1>
-            <a href="">
-                <div id="cards">
-                <div class="card_tshirts">
-                    <img src="images/tshirts.png" alt="t-shirts">
-                    <div class="card_container">
-                        <h4>T-shirts Vintage</h4>
-                        <p>T-shirts do tamanho xs até ao xxl</p>
-                        <span class="preço"><p>20€</p></span>
-                    </div>
-            </a>
-        
-                </div>
-            <a href="">
-                <div class="card_calcas">
-                    <img src="images/calcas.png" alt="calcas">
-                    <div class="card_container">
-                        <h4>Calças Vintage</h4>
-                        <p>Calças do tamanho 30 até ao 50</p>
-                        <span class="preço"><p>30€</p></span>
-                    </div>
-                </a>
+            <div id="cards">
+    <?php 
+        $sql ='SELECT * from produtos WHERE tipo LIKE "roupa" LIMIT 0,3';
+        $roupas= $ligacao->query($sql);
+        while($r=$roupas->fetch_assoc()) {
+    ?><div class="card_tshirts">
+            <a href="produto.php?id=<?= $r['id'] ?>">
                 
-            </div>
-                <a href="">
-                    <div class="card_casacos">
-                    <img src="images/casaco.png" alt="casacos">
+                    <img src="images/<?= $r['imagem'] ?>" alt="t-shirts e calças <?= $r['nome'] ?>">
                     <div class="card_container">
-                        <h4>Casacos Vintage</h4>
-                        <p>Casacos do tamanho xs até ao xxl</p>
-                        <span class="preço"><p>35€</p></span>
+                        <h4><?= $r['nome'] ?></h4>
+                        <p><?= $r['descricao'] ?></p>
+                        <span class="preço"><p><?= $r['preco'] ?>€</p></span>
                     </div>
-                </a>
-            </div>
+                
+            </a>
+        </div>
+        <?php } ?>
+        </div>
             <hr>
         </section>
     
         <section id="acessorios">
             <h1>Acessórios e Calçados</h1>
-            <a href="">
-                <div class="card_acessorios">
-                <img src="images/acessorios.png" alt="T-shirts">
-                <div class="card_container">
-                    <h4>Acessorios Vintage</h4>
-                    <p>Acessorios: Aneis, correntes, pulseiras e brincos</p>
-                    <span class="preço"><p>10€</p></span>
-                </div>
+            <div id="cards">
+
+            <?php 
+        $sql ='SELECT * from produtos WHERE tipo LIKE "ace-cal" LIMIT 0,3';
+        $aces= $ligacao->query($sql);
+        while($a=$aces->fetch_assoc()) {
+    ?><div class="card_acessorios">
+            <a href="produto.php?id=<?= $a['id'] ?>">
+                
+                    <img src="images/<?= $a['imagem'] ?>" alt="Acessórios e calçados <?= $a['nome'] ?>">
+                    <div class="card_container">
+                        <h4><?= $a['nome'] ?></h4>
+                        <p><?= $a['descricao'] ?></p>
+                        <span class="preço"><p><?= $a['preco'] ?>€</p></span>
+                    </div>
+                
             </a>
         </div>
-            <a href="">
-                <div class="card_acessorios">
-                <img src="images/sapatilhas-p-6000-2FBrXk.png" alt="T-shirts">
-                <div class="card_container">
-                    <h4>Calçados Vintage</h4>
-                    <p>Calçados: 20 até o 50</p>
-                    <span class="preço"><p>60€-150€</p></span>
-                </div>
-                </a>
-            </div>
+        <?php } ?>
+        </div>
+           
             <hr>
         </section>
     
@@ -98,10 +85,7 @@
             <hr>
         </section>
         
-        <section id="contactos">
-            <h1>Contactos</h1>
-            <span class="text"><li>edu@eduvintage.com | +351 925328117 | Rua Joaquim Rodrigues, nº15</li></span>
-        </section>
+        <?php include_once('footer.php');?>
 
         <script src="js/bootstrap.bundle.min.js"></script>
     </body>
